@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferenciación e Integración Numéricas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #16a085;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #16a085;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+  <!-- Menú Lateral -->
+  <div id="sideMenu" class="side-menu">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+    <a href="index.html">Inicio</a>
+    <a href="introduccion.html">I. Análisis de errores y graficación</a>
+    <a href="raices.html">II. Raíces de ecuaciones</a>
+    <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
+    <a href="interpolacion.html">IV. Interpolación</a>
+    <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
+    <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
+</div>
+
+    <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
+</head>
+<body>
+    <h2>V. Diferenciación e Integración Numéricas</h2>
+
+    <h3>Diferenciación Numérica</h3>
+    <p>Usamos diferencias finitas para aproximar derivadas.</p>
+
+    <h3>Ejemplo</h3>
+    <p>Para <code>f(x) = x²</code> en <code>x = 2</code> usando diferencias hacia adelante con <code>h = 0.1</code>:</p>
+    <pre>
+f'(2) ≈ (f(2.1) - f(2)) / 0.1 = (4.41 - 4) / 0.1 = 4.1
+La derivada exacta es f'(x) = 2x, por lo que la aproximación es precisa.
+    </pre>
+
+    <h3>Integración Numérica: Regla del trapecio</h3>
+    
+    <h3>Ejemplo</h3>
+    <p>Aproximemos <code>∫₀¹ x² dx</code> usando la regla del trapecio con <code>n = 2</code> subintervalos:</p>
+    <pre>
+h = (1 - 0) / 2 = 0.5
+∫₀¹ x² dx ≈ (0.5 / 2) * [f(0) + 2f(0.5) + f(1)] 
+= (0.5 / 2) * [0 + 2(0.25) + 1] = 0.375
+Valor exacto: 1/3 ≈ 0.333 (buena aproximación).
+    </pre>
+
+    <a href="index.html" class="back-button">Regresar a la página principal</a>
+
+        <script src="script.js"></script>
+</body>
+</html>

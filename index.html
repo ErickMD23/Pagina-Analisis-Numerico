@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página para el Aprendizaje de Análisis Numérico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <img src="logo_esime.png" alt="Logo" class="logo">
+            <span class="header-text">Página para el aprendizaje de Análisis Numérico</span>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Apartado del Logo de la Escuela y Oración -->
+    <section class="school-section">
+        <img src="logo_esime.png" alt="Logo de la Escuela" class="school-logo">
+        <p class="school-text">"La educación es el arma más poderosa que puedes usar para cambiar el mundo" - Nelson Mandela</p>
+    </section>
+
+    <!-- Contenido Principal -->
+    <div class="content">
+        <div class="intro">
+            <p>Bienvenido a la página de aprendizaje de Análisis Numérico. Aquí aprenderás sobre los conceptos y métodos fundamentales utilizados en este campo.</p>
+        </div>
+
+        <!-- Cuadros de Temas -->
+        <div class="topic-grid">
+            <div class="topic" onclick="navigateTo('introduccion.html')">I.- Análisis de errores y graficación. </div>
+            <div class="topic" onclick="navigateTo('raices.html')">II. Raíces de ecuaciones</div>
+            <div class="topic" onclick="navigateTo('sistemas.html')">III. Sistemas de ecuaciones lineales</div>
+            <div class="topic" onclick="navigateTo('interpolacion.html')">IV. Interpolación</div>
+            <div class="topic" onclick="navigateTo('diferenciacion.html')">V. Diferenciación e integración numéricas</div>
+            <div class="topic" onclick="navigateTo('ecuaciones.html')">VI. Ecuaciones diferenciales ordinarias</div>
+        </div>
+
+    </div>
+
+     <!-- Menú Lateral -->
+     <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+        <a href="index.html">Inicio</a>
+        <a href="introduccion.html">I. Análisis de errores y graficación</a>
+        <a href="raices.html">II. Raíces de ecuaciones</a>
+        <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
+        <a href="interpolacion.html">IV. Interpolación</a>
+        <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
+        <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
+    </div>
+
+    <!-- Derechos de Autor -->
+    <footer>
+        <p>&copy; 2024. Todos los derechos reservados. Página creada para el aprendizaje de Análisis Numérico.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

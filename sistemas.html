@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Ecuaciones Lineales</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #16a085;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #16a085;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+      <!-- Menú Lateral -->
+      <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+        <a href="index.html">Inicio</a>
+        <a href="introduccion.html">I. Análisis de errores y graficación</a>
+        <a href="raices.html">II. Raíces de ecuaciones</a>
+        <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
+        <a href="interpolacion.html">IV. Interpolación</a>
+        <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
+        <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
+    </div>
+
+    
+    <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
+</head>
+<body>
+    <h2>III. Sistemas de ecuaciones lineales</h2>
+
+    <h3>Método de Eliminación de Gauss</h3>
+    <p>Resuelve sistemas de ecuaciones lineales convirtiendo la matriz en forma triangular.</p>
+
+    <h3>Ejemplo</h3>
+    <p>Resolvamos el sistema:</p>
+    <pre>
+2x + 3y = 5
+4x + y = 6
+Multiplicamos la primera ecuación por 2 y restamos de la segunda:
+(4x + y) - (4x + 6y) = 6 - 10 → -5y = -4 → y = 4/5
+Sustituimos en la primera ecuación: 
+2x + 3(4/5) = 5 → x = 7/5
+Solución: x = 7/5, y = 4/5
+    </pre>
+
+    <a href="index.html" class="back-button">Regresar a la página principal</a>
+
+        <script src="script.js"></script>
+</body>
+</html>

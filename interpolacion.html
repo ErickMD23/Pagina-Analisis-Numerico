@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpolación</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #16a085;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #16a085;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+      <!-- Menú Lateral -->
+      <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+        <a href="index.html">Inicio</a>
+        <a href="introduccion.html">I. Análisis de errores y graficación</a>
+        <a href="raices.html">II. Raíces de ecuaciones</a>
+        <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
+        <a href="interpolacion.html">IV. Interpolación</a>
+        <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
+        <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
+    </div>
+
+    
+    <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
+</head>
+<body>
+    <h2>IV. Interpolación</h2>
+
+    <h3>Interpolación de Lagrange</h3>
+    <p>Encuentra un polinomio que pasa exactamente por los puntos dados.</p>
+
+    <h3>Ejemplo</h3>
+    <p>Dado <code>f(1) = 1</code>, <code>f(2) = 4</code>, <code>f(3) = 9</code>:</p>
+    <pre>
+Polinomio de Lagrange:
+P(x) = 1 * (x-2)(x-3)/2 + 4 * (x-1)(x-3)/(-1) + 9 * (x-1)(x-2)/2
+Resultado: P(x) = x² (interpolación exacta).
+    </pre>
+
+    <a href="index.html" class="back-button">Regresar a la página principal</a>
+
+        <script src="script.js"></script>
+</body>
+</html>

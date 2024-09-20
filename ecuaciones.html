@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuaciones Diferenciales Ordinarias</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #16a085;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #16a085;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+   
+    <!-- Menú Lateral -->
+    <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+        <a href="index.html">Inicio</a>
+        <a href="introduccion.html">I. Análisis de errores y graficación</a>
+        <a href="raices.html">II. Raíces de ecuaciones</a>
+        <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
+        <a href="interpolacion.html">IV. Interpolación</a>
+        <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
+        <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
+    </div>
+
+    
+    <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
+</head>
+<body>
+    <h2>VI. Ecuaciones Diferenciales Ordinarias</h2>
+
+    <h3>Método de Euler</h3>
+    <p>Aproxima la solución de una EDO usando pasos pequeños.</p>
+
+    <h3>Ejemplo</h3>
+    <p>Para <code>y' = -2y</code>, con <code>y(0) = 1</code> y <code>h = 0.1</code>:</p>
+    <pre>
+y₁ = 1 + 0.1(-2 * 1) = 1 - 0.2 = 0.8
+y₂ = 0.8 + 0.1(-2 * 0.8) = 0.8 - 0.16 = 0.64
+Esta aproximación converge hacia la solución exacta y(x) = e^(-2x).
+    </pre>
+
+    <a href="index.html" class="back-button">Regresar a la página principal</a>
+
+        <script src="script.js"></script>
+</body>
+</html>
