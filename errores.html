@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Errores y Graficación</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #16a085;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #16a085;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <!-- Menú Lateral -->
+    <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+        <a href="index.html">Inicio</a>
+        <a href="introduccion.html">I. Análisis de errores y graficación</a>
+        <a href="raices.html">II. Raíces de ecuaciones</a>
+        <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
+        <a href="interpolacion.html">IV. Interpolación</a>
+        <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
+        <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
+    </div>
+    
+    <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
+</head>
+<body>
+    <h2>I. Análisis de errores y graficación</h2>
+
+    <h3>Análisis de errores</h3>
+    <p>El análisis de errores estudia las desviaciones entre la solución exacta y la solución aproximada. Se dividen en dos tipos principales:</p>
+    <ul>
+        <li><strong>Error absoluto</strong>: Diferencia entre el valor exacto y el valor aproximado.
+            <pre>Error absoluto = |x_exacto - x_aproximado|</pre>
+        </li>
+        <li><strong>Error relativo</strong>: Error absoluto dividido por el valor exacto.
+            <pre>Error relativo = |x_exacto - x_aproximado| / |x_exacto|</pre>
+        </li>
+    </ul>
+
+    <h3>Ejemplo</h3>
+    <p>Si el valor exacto de <em>π</em> es 3.141592 y tenemos una aproximación de 3.14:</p>
+    <pre>
+Error absoluto: |3.141592 - 3.14| = 0.001592
+Error relativo: 0.001592 / 3.141592 ≈ 0.000506
+    </pre>
+
+    <h3>Graficación</h3>
+    <p>La graficación nos permite visualizar el comportamiento de las soluciones aproximadas y exactas.</p>
+    <p><strong>Ejemplo</strong>: Graficar <code>f(x) = x² - 2</code> nos permite visualizar la raíz de la ecuación <code>x² = 2</code>.</p>
+
+    <a href="index.html" class="back-button">Regresar a la página principal</a>
+  
+<script src="script.js"></script>
+</body>
+</html>

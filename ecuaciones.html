@@ -14,7 +14,8 @@
         h2 {
             color: #2c3e50;
         }
-        h3 {
+        h2
+ {
             color: #16a085;
         }
         pre {
@@ -44,25 +45,73 @@
         <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
     </div>
 
-    
     <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
 </head>
 <body>
-    <h2>VI. Ecuaciones Diferenciales Ordinarias</h2>
+    <h2>I. Ecuaciones Diferenciales Ordinarias</h2>
 
-    <h3>Método de Euler</h3>
-    <p>Aproxima la solución de una EDO usando pasos pequeños.</p>
-
+    <h3>1.1 Método de Euler</h3>
+    <p>El método de Euler es una técnica numérica para aproximar la solución de ecuaciones diferenciales ordinarias (EDO) usando pasos pequeños.</p>
     <h3>Ejemplo</h3>
     <p>Para <code>y' = -2y</code>, con <code>y(0) = 1</code> y <code>h = 0.1</code>:</p>
     <pre>
-y₁ = 1 + 0.1(-2 * 1) = 1 - 0.2 = 0.8
-y₂ = 0.8 + 0.1(-2 * 0.8) = 0.8 - 0.16 = 0.64
-Esta aproximación converge hacia la solución exacta y(x) = e^(-2x).
+Paso 1:
+y₁ = y₀ + h * f(x₀, y₀)
+y₁ = 1 + 0.1 * (-2 * 1) = 1 - 0.2 = 0.8
+
+Paso 2:
+y₂ = y₁ + h * f(x₁, y₁)
+y₂ = 0.8 + 0.1 * (-2 * 0.8) = 0.8 - 0.16 = 0.64
+
+Resultado:
+y₀ = 1, y₁ = 0.8, y₂ = 0.64
+La aproximación converge hacia la solución exacta: y(x) = e^(-2x).
+    </pre>
+
+    <h3>1.2 Método de Runge-Kutta</h3>
+    <p>El método de Runge-Kutta (RK) de cuarto orden es más preciso que el método de Euler y utiliza cuatro pasos intermedios en cada iteración.</p>
+    <h3>Ejemplo</h3>
+    <p>Para <code>y' = x + y</code>, con <code>y(0) = 1</code> y <code>h = 0.2</code>:</p>
+    <pre>
+Paso 1: Calcular los valores intermedios.
+k₁ = h * f(x₀, y₀) = 0.2 * (0 + 1) = 0.2
+k₂ = h * f(x₀ + h/2, y₀ + k₁/2) = 0.2 * (0.1 + 1.1) = 0.24
+k₃ = h * f(x₀ + h/2, y₀ + k₂/2) = 0.2 * (0.1 + 1.12) = 0.244
+k₄ = h * f(x₀ + h, y₀ + k₃) = 0.2 * (0.2 + 1.244) = 0.2888
+
+Paso 2: Calcular la siguiente aproximación.
+y₁ = y₀ + (k₁ + 2k₂ + 2k₃ + k₄) / 6
+y₁ = 1 + (0.2 + 2(0.24) + 2(0.244) + 0.2888) / 6 = 1.243
+
+Resultado:
+y(0.2) ≈ 1.243 (aproximación numérica).
+    </pre>
+
+    <h3>1.3 Resolución de Sistemas de Ecuaciones Diferenciales Ordinarias de Primer Orden</h3>
+    <p>Para resolver sistemas de EDOs de primer orden, se pueden usar métodos como Euler o Runge-Kutta.</p>
+    <h3>Ejemplo</h3>
+    <p>Para el sistema:</p>
+    <pre>
+x' = -y
+y' = x
+Con condiciones iniciales: x(0) = 1, y(0) = 0, y paso <code>h = 0.1</code>.
+
+Usando el método de Euler:
+Paso 1:
+x₁ = x₀ + h * (-y₀) = 1 + 0.1 * (0) = 1
+y₁ = y₀ + h * (x₀) = 0 + 0.1 * (1) = 0.1
+
+Paso 2:
+x₂ = x₁ + h * (-y₁) = 1 + 0.1 * (-0.1) = 0.99
+y₂ = y₁ + h * (x₁) = 0.1 + 0.1 * (1) = 0.2
+
+Resultado:
+x₁ = 1, y₁ = 0.1
+x₂ = 0.99, y₂ = 0.2
+El sistema sigue una trayectoria circular, como se espera.
     </pre>
 
     <a href="index.html" class="back-button">Regresar a la página principal</a>
-
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

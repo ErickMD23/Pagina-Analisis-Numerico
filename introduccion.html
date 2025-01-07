@@ -14,7 +14,8 @@
         h2 {
             color: #2c3e50;
         }
-        h3 {
+        h2
+ {
             color: #16a085;
         }
         pre {
@@ -31,6 +32,8 @@
             text-decoration: underline;
         }
     </style>
+</head>
+<body>
     <!-- Menú Lateral -->
     <div id="sideMenu" class="side-menu">
         <span class="close-btn" onclick="closeMenu()">&times;</span>
@@ -42,22 +45,17 @@
         <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
         <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
     </div>
-    
     <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
-</head>
-<body>
-    <h2>I. Análisis de errores y graficación</h2>
 
-    <h3>Análisis de errores</h3>
+    <h2>I. Análisis de errores y graficación</h2>
     <p>El análisis de errores estudia las desviaciones entre la solución exacta y la solución aproximada. Se dividen en dos tipos principales:</p>
-    <ul>
-        <li><strong>Error absoluto</strong>: Diferencia entre el valor exacto y el valor aproximado.
+    
+        <p><strong>Error absoluto</strong>: Diferencia entre el valor exacto y el valor aproximado.
             <pre>Error absoluto = |x_exacto - x_aproximado|</pre>
-        </li>
-        <li><strong>Error relativo</strong>: Error absoluto dividido por el valor exacto.
+        </p>
+        <p><strong>Error relativo</strong>: Error absoluto dividido por el valor exacto.
             <pre>Error relativo = |x_exacto - x_aproximado| / |x_exacto|</pre>
-        </li>
-    </ul>
+        </p>
 
     <h3>Ejemplo</h3>
     <p>Si el valor exacto de <em>π</em> es 3.141592 y tenemos una aproximación de 3.14:</p>
@@ -70,8 +68,75 @@ Error relativo: 0.001592 / 3.141592 ≈ 0.000506
     <p>La graficación nos permite visualizar el comportamiento de las soluciones aproximadas y exactas.</p>
     <p><strong>Ejemplo</strong>: Graficar <code>f(x) = x² - 2</code> nos permite visualizar la raíz de la ecuación <code>x² = 2</code>.</p>
 
+    <h2>II. Series de Taylor y Mc Laurin</h2>
+    <p>Las series de Taylor y Mc Laurin son representaciones de funciones como una suma infinita de términos calculados a partir de sus derivadas.</p>
+    <pre>
+Serie de Taylor:
+f(x) ≈ f(a) + f'(a)(x - a) + f''(a)(x - a)² / 2! + ...
+
+Serie de Mc Laurin (caso especial con a = 0):
+f(x) ≈ f(0) + f'(0)x + f''(0)x² / 2! + ...
+    </pre>
+    <p>Estas series son útiles para aproximar funciones complejas mediante polinomios.</p>
+
+    <h2>III. Exactitud y Precisión</h2>
+    <p><strong>Exactitud:</strong> Qué tan cercano está un valor medido o calculado al valor verdadero.</p>
+    <p><strong>Precisión:</strong> Qué tan consistente es un conjunto de mediciones entre sí, independientemente del valor verdadero.</p>
+
+    <h3>Ejemplo</h3>
+    <p>Un termómetro mide la temperatura de un cuerpo en °C:</p>
+    
+        <p>Valor verdadero: <strong>37°C</strong></p>
+        <p>Medidas registradas: <strong>36.9°C, 37.1°C, 36.8°C</strong></p>
+    
+    <p><strong>Análisis:</strong></p>
+    
+        <p><strong>Exactitud:</strong> Alta porque las mediciones están cerca del valor verdadero.</p>
+        <p><strong>Precisión:</strong> Alta porque las mediciones son consistentes entre sí.</p>
+    
+
+    <p><strong>Ejercicio:</strong></p>
+    <p>Un estudiante mide la longitud de un objeto cuya medida verdadera es <strong>10 cm</strong>. Obtiene los siguientes resultados:</p>
+
+        <p>Mediciones: <strong>9.8 cm, 10.2 cm, 10.1 cm, 9.9 cm</strong></p>
+
+        <p>Evalúa la <strong>exactitud</strong> de las mediciones con respecto al valor verdadero.</p>
+        <p>Evalúa la <strong>precisión</strong> de las mediciones comparándolas entre sí.</p>
+    
+
+    <h2>IV. Error Absoluto y Relativo</h2>
+    <h3>Ejemplo</h3>
+    <p>Queremos calcular la raíz cuadrada de 2:</p>
+ 
+        <p>Valor verdadero: <strong>1.41421</strong></p>
+        <p>Valor aproximado: <strong>1.41</strong></p>
+    
+    <p>Cálculos:</p>
+    <pre>
+Error absoluto: |1.41421 - 1.41| = 0.00421
+Error relativo: 0.00421 / 1.41421 ≈ 0.00297 (o 0.297%)
+    </pre>
+
+    <p><strong>Ejercicio:</strong></p>
+    <p>El valor verdadero de \( π \) es <strong>3.14159265</strong>, pero se utiliza <strong>3.14</strong> en un cálculo aproximado.</p>
+
+        <p>Calcula el <strong>error absoluto</strong>.</p>
+        <p>Calcula el <strong>error relativo</strong> en porcentaje.</p>
+
+    <h2>V. Números de punto flotante en 32 y 64 bits</h2>
+    <p>Los números de punto flotante son representaciones de números reales en computadoras. Los formatos más comunes son:</p>
+        <p><strong>32 bits (precisión simple):</strong> Representa aproximadamente 7 cifras significativas.</p>
+        <p><strong>64 bits (doble precisión):</strong> Representa aproximadamente 15-16 cifras significativas.</p>
+    <p><strong>Ejemplo:</strong> Un número decimal como <strong>3.14159265</strong>:</p>
+        <p><strong>32 bits:</strong> Almacena aproximadamente <strong>3.141592</strong>.</p>
+        <p><strong>64 bits:</strong> Almacena aproximadamente <strong>3.14159265358979</strong>.</p>
+    <p><strong>Ejercicio:</strong></p>
+    
+        <p>¿Cuál es el rango de números representables en punto flotante de <strong>32 bits</strong></p>
+        <p>Si usamos 32 bits para almacenar el número <strong>123456.789</strong>, ¿cuántos dígitos significativos son retenidos?</p>
+    
+
     <a href="index.html" class="back-button">Regresar a la página principal</a>
-  
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

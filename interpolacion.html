@@ -14,7 +14,8 @@
         h2 {
             color: #2c3e50;
         }
-        h3 {
+        h2
+ {
             color: #16a085;
         }
         pre {
@@ -32,8 +33,8 @@
         }
     </style>
 
-      <!-- Menú Lateral -->
-      <div id="sideMenu" class="side-menu">
+    <!-- Menú Lateral -->
+    <div id="sideMenu" class="side-menu">
         <span class="close-btn" onclick="closeMenu()">&times;</span>
         <a href="index.html">Inicio</a>
         <a href="introduccion.html">I. Análisis de errores y graficación</a>
@@ -44,25 +45,61 @@
         <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
     </div>
 
-    
     <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
 </head>
 <body>
-    <h2>IV. Interpolación</h2>
+    <h2>I. Interpolación</h2>
 
-    <h3>Interpolación de Lagrange</h3>
-    <p>Encuentra un polinomio que pasa exactamente por los puntos dados.</p>
-
+    <h3>1.1 Mínimos Cuadrados</h3>
+    <p>El método de mínimos cuadrados se utiliza para encontrar la mejor línea que ajuste un conjunto de puntos minimizando la suma de los cuadrados de las diferencias (errores) entre los puntos observados y la línea.</p>
     <h3>Ejemplo</h3>
-    <p>Dado <code>f(1) = 1</code>, <code>f(2) = 4</code>, <code>f(3) = 9</code>:</p>
+    <p>Dado el conjunto de puntos <code>(x, y) = {(1, 1), (2, 2), (3, 2)}</code>, ajustemos una línea <code>y = mx + b</code>:</p>
     <pre>
-Polinomio de Lagrange:
-P(x) = 1 * (x-2)(x-3)/2 + 4 * (x-1)(x-3)/(-1) + 9 * (x-1)(x-2)/2
-Resultado: P(x) = x² (interpolación exacta).
+Paso 1: Calcular m (pendiente):
+m = Σ(xi - x̄)(yi - ȳ) / Σ(xi - x̄)²
+m = (1*1 + 0*0 + 1*0) / (1² + 0² + 1²) = 0.5
+
+Paso 2: Calcular b (intersección):
+b = ȳ - m * x̄
+b = 1.67 - 0.5 * 2 = 0.67
+
+Resultado: y = 0.5x + 0.67
+    </pre>
+
+    <h3>1.2 Método de Lagrange</h3>
+    <p>El método de Lagrange encuentra un polinomio de interpolación que pasa exactamente por un conjunto de puntos dados.</p>
+    <h3>Ejemplo</h3>
+    <p>Dado <code>(1, 1)</code>, <code>(2, 4)</code>, <code>(3, 9)</code>, encontremos el polinomio de interpolación:</p>
+    <pre>
+L1(x) = (x - 2)(x - 3) / ((1 - 2)(1 - 3)) = (x - 2)(x - 3) / 2
+L2(x) = (x - 1)(x - 3) / ((2 - 1)(2 - 3)) = -(x - 1)(x - 3)
+L3(x) = (x - 1)(x - 2) / ((3 - 1)(3 - 2)) = (x - 1)(x - 2) / 2
+
+P(x) = 1 * L1(x) + 4 * L2(x) + 9 * L3(x)
+P(x) = x² (polinomio exacto).
+    </pre>
+
+    <h3>1.3 Método de Interpolación de Newton</h3>
+    <p>Este método utiliza diferencias divididas para construir el polinomio de interpolación de forma iterativa.</p>
+    <h3>Ejemplo</h3>
+    <p>Dado <code>(1, 1)</code>, <code>(2, 4)</code>, <code>(3, 9)</code>, construyamos el polinomio:</p>
+    <pre>
+Tabla de diferencias divididas:
+x    f(x)    Δf1    Δf2
+1    1
+     (4-1)/(2-1) = 3
+2    4        3
+     (9-4)/(3-2) = 5
+     (5-3)/(3-1) = 1
+3    9        5       1
+
+Polinomio:
+P(x) = f(1) + Δf1(x - 1) + Δf2(x - 1)(x - 2)
+P(x) = 1 + 3(x - 1) + 1(x - 1)(x - 2)
+P(x) = x² (interpolación exacta).
     </pre>
 
     <a href="index.html" class="back-button">Regresar a la página principal</a>
-
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

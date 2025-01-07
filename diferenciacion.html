@@ -14,7 +14,8 @@
         h2 {
             color: #2c3e50;
         }
-        h3 {
+        h2
+ {
             color: #16a085;
         }
         pre {
@@ -32,46 +33,101 @@
         }
     </style>
 
-  <!-- Menú Lateral -->
-  <div id="sideMenu" class="side-menu">
-    <span class="close-btn" onclick="closeMenu()">&times;</span>
-    <a href="index.html">Inicio</a>
-    <a href="introduccion.html">I. Análisis de errores y graficación</a>
-    <a href="raices.html">II. Raíces de ecuaciones</a>
-    <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
-    <a href="interpolacion.html">IV. Interpolación</a>
-    <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
-    <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
-</div>
+    <!-- Menú Lateral -->
+    <div id="sideMenu" class="side-menu">
+        <span class="close-btn" onclick="closeMenu()">&times;</span>
+        <a href="index.html">Inicio</a>
+        <a href="introduccion.html">I. Análisis de errores y graficación</a>
+        <a href="raices.html">II. Raíces de ecuaciones</a>
+        <a href="sistemas.html">III. Sistemas de ecuaciones lineales</a>
+        <a href="interpolacion.html">IV. Interpolación</a>
+        <a href="diferenciacion.html">V. Diferenciación e integración numéricas</a>
+        <a href="ecuaciones.html">VI. Ecuaciones diferenciales ordinarias</a>
+    </div>
 
     <button class="open-btn" onclick="toggleMenu()">☰ Menu</button>
 </head>
 <body>
-    <h2>V. Diferenciación e Integración Numéricas</h2>
 
-    <h3>Diferenciación Numérica</h3>
-    <p>Usamos diferencias finitas para aproximar derivadas.</p>
+    <h2>I. Diferenciación Numérica</h2>
+    <p>La diferenciación numérica utiliza diferencias finitas para aproximar derivadas de funciones.</p>
 
-    <h3>Ejemplo</h3>
-    <p>Para <code>f(x) = x²</code> en <code>x = 2</code> usando diferencias hacia adelante con <code>h = 0.1</code>:</p>
+    <h3>1.1 Método de Diferencias hacia Adelante</h3>
+    <p>Aproxima la derivada con los valores futuros de la función.</p>
+    <h4>Ejemplo</h4>
+    <p>Para <code>f(x) = x²</code> en <code>x = 2</code> usando <code>h = 0.1</code>:</p>
     <pre>
 f'(2) ≈ (f(2.1) - f(2)) / 0.1 = (4.41 - 4) / 0.1 = 4.1
-La derivada exacta es f'(x) = 2x, por lo que la aproximación es precisa.
+La derivada exacta es f'(x) = 2x → f'(2) = 4 (precisión aceptable).
     </pre>
 
-    <h3>Integración Numérica: Regla del trapecio</h3>
-    
-    <h3>Ejemplo</h3>
-    <p>Aproximemos <code>∫₀¹ x² dx</code> usando la regla del trapecio con <code>n = 2</code> subintervalos:</p>
+    <h3>1.2 Método de Diferencias hacia Atrás</h3>
+    <p>Aproxima la derivada con los valores pasados de la función.</p>
+    <h4>Ejemplo</h4>
+    <p>Para <code>f(x) = x²</code> en <code>x = 2</code> usando <code>h = 0.1</code>:</p>
+    <pre>
+f'(2) ≈ (f(2) - f(1.9)) / 0.1 = (4 - 3.61) / 0.1 = 3.9
+La derivada exacta es f'(x) = 2x → f'(2) = 4 (error pequeño).
+    </pre>
+
+    <h3>1.3 Método de Diferencias Centrales</h3>
+    <p>Utiliza valores tanto hacia adelante como hacia atrás para mejorar la precisión.</p>
+    <h4>Ejemplo</h4>
+    <p>Para <code>f(x) = x²</code> en <code>x = 2</code> usando <code>h = 0.1</code>:</p>
+    <pre>
+f'(2) ≈ (f(2.1) - f(1.9)) / (2 * 0.1) = (4.41 - 3.61) / 0.2 = 4.0
+La derivada exacta es f'(x) = 2x → f'(2) = 4 (resultado exacto).
+    </pre>
+
+    <h2>II. Integración Numérica</h2>
+    <p>La integración numérica aproxima el valor de una integral definida mediante métodos discretos.</p>
+
+    <h3>2.1 Método del Trapecio</h3>
+    <p>Divide el intervalo en trapecios y suma sus áreas.</p>
+    <h4>Ejemplo</h4>
+    <p>Aproximemos <code>∫₀¹ x² dx</code> con <code>n = 2</code> subintervalos:</p>
     <pre>
 h = (1 - 0) / 2 = 0.5
-∫₀¹ x² dx ≈ (0.5 / 2) * [f(0) + 2f(0.5) + f(1)] 
+∫₀¹ x² dx ≈ (h / 2) * [f(0) + 2f(0.5) + f(1)]
 = (0.5 / 2) * [0 + 2(0.25) + 1] = 0.375
 Valor exacto: 1/3 ≈ 0.333 (buena aproximación).
     </pre>
 
-    <a href="index.html" class="back-button">Regresar a la página principal</a>
+    <h3>2.2 Método de Romberg</h3>
+    <p>Combina las reglas del trapecio para mejorar la precisión mediante extrapolación.</p>
+    <h4>Ejemplo</h4>
+    <p>Aproximemos <code>∫₀¹ x² dx</code>:</p>
+    <pre>
+Paso 1: Calcular T(h₁) y T(h₂) con diferentes particiones.
+Paso 2: Extrapolar usando:
+R₂₁ = (4T(h₂) - T(h₁)) / 3
+Resultado: ∫₀¹ x² dx ≈ 0.333 (valor exacto).
+    </pre>
 
-        <script src="script.js"></script>
+    <h3>2.3 Métodos de Simpson</h3>
+    <p>Usa parábolas para aproximar el área bajo la curva.</p>
+    <h4>Ejemplo</h4>
+    <p>Aproximemos <code>∫₀¹ x² dx</code> con el método de Simpson (n = 2):</p>
+    <pre>
+h = (1 - 0) / 2 = 0.5
+∫₀¹ x² dx ≈ (h / 3) * [f(0) + 4f(0.5) + f(1)]
+= (0.5 / 3) * [0 + 4(0.25) + 1] = 0.333
+Resultado exacto: 1/3.
+    </pre>
+
+    <h3>2.4 Cuadratura de Gauss</h3>
+    <p>Utiliza puntos y pesos específicos para calcular integrales con alta precisión.</p>
+    <h4>Ejemplo</h4>
+    <p>Aproximemos <code>∫₋₁¹ x² dx</code> usando cuadratura de Gauss con 2 puntos:</p>
+    <pre>
+Puntos: x₁ = -√(1/3), x₂ = √(1/3)
+Pesos: w₁ = w₂ = 1
+∫₋₁¹ x² dx ≈ Σ wᵢ * f(xᵢ)
+= 1*f(-√(1/3)²) + 1*f(√(1/3)²) = 1/3 + 1/3 = 2/3
+Valor exacto: 2/3 (coincide con el resultado).
+    </pre>
+
+    <a href="index.html" class="back-button">Regresar a la página principal</a>
+    <script src="script.js"></script>
 </body>
 </html>
